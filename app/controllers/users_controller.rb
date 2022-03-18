@@ -5,19 +5,19 @@ class UsersController < ApplicationController
   # GET /users
   def index
     @users = User.all
-    render json: @users, status: :ok
+    render json: @users, only: [:id, :first_name, :last_name, :username], status: :ok
   end
 
   # GET /users/{username}
   def show
-    render json: @user, status: :ok
+    render json: @user, except:[:password_digest], status: :ok
   end
 
   # POST /users
   def create
     @user = User.new(user_params)
     if @user.save
-      render json: @user, status: :created
+      render json: @user, only: [:id, :first_name, :last_name, :username], status: :created
     else
       render json: { errors: @user.errors.full_messages },
              status: :unprocessable_entity
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
       render json: { errors: @user.errors.full_messages },
              status: :unprocessable_entity
     end
-    render json: @user, status: :created
+    render json: @user, only: [:id, :first_name, :last_name, :username], status: :created
   end
 
   # DELETE /users/{username}

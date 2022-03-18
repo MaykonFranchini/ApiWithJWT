@@ -19,6 +19,9 @@ gem 'bcrypt', '~> 3.1.7'
 # JSON web token (JTW) for token based authentication
 gem 'jwt'
 
+# Active Model Serializer to return json data formated
+gem 'active_model_serializers', '~> 0.10.13'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
