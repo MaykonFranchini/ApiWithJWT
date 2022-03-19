@@ -62,10 +62,10 @@ To create a user, data must be sent in a request body.
 **Response**
 ```js
   {
-	"id": 1,
-	"first_name": "John",
-	"last_name": "Doe",
-	"username": "johndoe2022"
+    "id": 1,
+    "first_name": "John",
+    "last_name": "Doe",
+    "username": "johndoe2022"
 }
 ```
 ### List users
